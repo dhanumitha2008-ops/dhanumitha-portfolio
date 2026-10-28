@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhanumitha S — Computer Science Engineering student, aspiring software engineer, and technology enthusiast." />
+  <title>Dhanumitha S | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#fbf8f4;--paper:#fff;--ink:#29251f;--muted:#777168;--accent:#956c4d;--accent-light:#efe3d8;--line:#e9e0d7;--shadow:0 18px 50px rgba(69,47,28,.08)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,90%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(251,248,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(233,224,215,.8)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;letter-spacing:.02em}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:27px;font-size:.9rem;color:var(--muted)}
+    .navlinks a:hover{color:var(--accent)}
+    .menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--ink)}
+    .hero{padding:100px 0 90px;display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+    .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem}
+    h1,h2,h3{margin-top:0;line-height:1.2}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.2rem);letter-spacing:-.04em;margin:18px 0}
+    h1 em{color:var(--accent);font-style:normal}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:600px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:8px;font-weight:700;font-size:.92rem;border:1px solid var(--accent);transition:.2s}
+    .btn.primary{background:var(--accent);color:white}.btn.primary:hover{background:#795338;transform:translateY(-2px)}
+    .btn.secondary{color:var(--accent)}.btn.secondary:hover{background:var(--accent-light)}
+    .hero-card{position:relative;background:var(--accent-light);border-radius:28px;padding:28px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-card:before,.hero-card:after{content:"";position:absolute;border:1px solid rgba(149,108,77,.25);border-radius:50%;width:270px;height:270px}
+    .hero-card:after{width:340px;height:340px}
+    .monogram{z-index:1;width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:var(--paper);box-shadow:var(--shadow);font-family:'Playfair Display',serif;font-size:4.2rem;color:var(--accent);letter-spacing:-.08em}
+    .float-note{position:absolute;z-index:2;bottom:28px;right:15px;background:var(--paper);padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);font-size:.82rem;font-weight:700}
+    section{padding:76px 0}
+    .section-head{max-width:650px;margin-bottom:34px}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4vw,3rem);margin-bottom:12px}
+    .section-head p,.muted{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
+    .about-panel{background:var(--paper);padding:28px;border:1px solid var(--line);border-radius:18px}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .fact{padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+    .fact strong{display:block;color:var(--accent);font-size:1.15rem;margin-bottom:4px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--paper);padding:25px;border:1px solid var(--line);border-radius:16px;transition:.2s}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .icon{width:43px;height:43px;border-radius:12px;background:var(--accent-light);display:grid;place-items:center;color:var(--accent);font-size:1.25rem;margin-bottom:18px}
+    .card h3{font-size:1.12rem;margin-bottom:10px}
+    .card p{color:var(--muted);font-size:.94rem;margin-bottom:0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .tag{font-size:.78rem;background:var(--accent-light);color:#765239;border-radius:100px;padding:5px 10px}
+    .timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:28px;display:grid;gap:25px}
+    .timeline-item{position:relative;background:var(--paper);border:1px solid var(--line);padding:22px 24px;border-radius:14px}
+    .timeline-item:before{content:"";position:absolute;left:-36px;top:28px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:4px solid var(--bg)}
+    .timeline-item small{color:var(--accent);font-weight:700;letter-spacing:.06em}
+    .timeline-item h3{margin:7px 0}
+    .contact{background:#342b24;color:white;border-radius:24px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+    .contact p{color:#d7c9bd}
+    .contact .btn{background:#fff;color:#342b24;border-color:#fff}
+    .contact .btn:hover{background:var(--accent-light)}
+    .contact-links{display:grid;gap:12px;color:#f3e8df}
+    .contact-links a:hover{text-decoration:underline}
+    footer{padding:28px 0;color:var(--muted);font-size:.85rem}
+    .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .note{font-size:.82rem;color:var(--muted);margin-top:18px}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding:65px 0;gap:35px}.hero-card{min-height:280px}.about-grid,.contact{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.navlinks{gap:14px}}
+    @media(max-width:560px){nav{height:66px}.menu{display:block}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;padding:18px 5%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column}.navlinks.open{display:flex}.cards{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.contact{padding:28px}.hero{padding-top:48px}section{padding:55px 0}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">D<span>.</span></a>
+      <button class="menu" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about" onclick="closeMenu()">About</a><a href="#skills" onclick="closeMenu()">Skills</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a><a href="#journey" onclick="closeMenu()">Journey</a><a href="#contact" onclick="closeMenu()">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Computer Science Engineering Student</div>
+        <h1>Hi, I'm<br><em>Dhanumitha.</em></h1>
+        <p>I’m a CSE student who enjoys learning how technology works and turning ideas into useful digital experiences. I’m building my skills in programming, web development, and problem-solving as I work towards becoming a software engineer.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work ↗</a>
+          <a class="btn secondary" href="#contact">Let's connect</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Dhanumitha initials monogram">
+        <div class="monogram">DS</div>
+        <div class="float-note">Curious mind. Continuous learner.</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">A little about me</div><h2>Learning today.<br>Building for tomorrow.</h2></div>
+        <div class="about-grid">
+          <div>
+            <p>I’m pursuing a Bachelor of Engineering in Computer Science and Engineering at SNS College of Technology. I’m interested in software development, AI-powered solutions, and creating projects that solve real-world problems.</p>
+            <p class="muted">My approach is simple: strengthen the basics, practise consistently, learn from every project, and keep improving one step at a time.</p>
+          </div>
+          <div class="facts">
+            <div class="fact"><strong>B.E. CSE</strong><span class="muted">SNS College of Technology</span></div>
+            <div class="fact"><strong>2025–2029</strong><span class="muted">Expected study period</span></div>
+            <div class="fact"><strong>8.33 / 10</strong><span class="muted">CGPA (as last provided)</span></div>
+            <div class="fact"><strong>Always learning</strong><span class="muted">Code • Create • Improve</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">What I'm learning</div><h2>Skills & interests</h2><p>Growing my technical foundation through coursework, practice, and hands-on projects.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">⌘</div><h3>Programming</h3><p>Building programming fundamentals and improving logical thinking through regular practice.</p><div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Problem-solving</span></div></article>
+          <article class="card"><div class="icon">⌘</div><h3>Web Development</h3><p>Creating clean, responsive web pages and learning how front-end technologies work together.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+          <article class="card"><div class="icon">✳</div><h3>Emerging Technology</h3><p>Exploring AI-based ideas and practical technology solutions for real-world challenges.</p><div class="tags"><span class="tag">AI concepts</span><span class="tag">Innovation</span><span class="tag">Research</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects I'm exploring</h2><p>A few academic and innovation projects that reflect my interests. Details can be expanded as the projects develop.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">⚖</div><h3>Legal AI Assistant</h3><p>An AI-focused concept for generating contract templates, identifying potential risks, and suggesting mitigation clauses.</p><div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">AI</span></div></article>
+          <article class="card"><div class="icon">✚</div><h3>Emergency Triage Assistant</h3><p>A prototype concept designed to collect basic user details and support first-response triage workflows.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+          <article class="card"><div class="icon">⌁</div><h3>Tourism & City Services</h3><p>A mini-project concept that brings tourist information and essential city services together in one place.</p><div class="tags"><span class="tag">Web development</span><span class="tag">Research</span><span class="tag">UI/UX</span></div></article>
+          <article class="card"><div class="icon">↗</div><h3>FreightWise AI</h3><p>A freight forecasting and vessel-chartering concept focused on smarter planning for bulk cargo procurement.</p><div class="tags"><span class="tag">Machine learning</span><span class="tag">Forecasting</span><span class="tag">Logistics</span></div></article>
+          <article class="card"><div class="icon">◎</div><h3>Smart Synerg</h3><p>An Industry 5.0 concept exploring human–AI collaboration, smart sensors, and safer, more efficient decisions.</p><div class="tags"><span class="tag">Industry 5.0</span><span class="tag">AI</span><span class="tag">Innovation</span></div></article>
+          <article class="card"><div class="icon">＋</div><h3>More in progress</h3><p>I'm continuously learning, experimenting, and adding to my portfolio as I build more hands-on experience.</p><div class="tags"><span class="tag">Learning</span><span class="tag">Building</span></div></article>
+        </div>
+        <p class="note">Project summaries are introductory descriptions. Add repository links, screenshots, and verified outcomes before publishing.</p>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">My journey</div><h2>Small steps, steady progress</h2></div>
+        <div class="timeline">
+          <div class="timeline-item"><small>EDUCATION · 2025–2029</small><h3>B.E. Computer Science and Engineering</h3><p class="muted">SNS College of Technology · Building a strong foundation in computer science.</p></div>
+          <div class="timeline-item"><small>HANDS-ON LEARNING</small><h3>Web Development Internship</h3><p class="muted">Completed a 15-day web development internship at Mechnido and explored front-end development fundamentals.</p></div>
+          <div class="timeline-item"><small>COURSES & CERTIFICATIONS</small><h3>Python and Java Fundamentals</h3><p class="muted">Completed beginner-level certificates in Python and Java, supporting my programming journey.</p></div>
+          <div class="timeline-item"><small>WHAT'S NEXT</small><h3>Projects, problem-solving & placement preparation</h3><p class="muted">Improving data structures, coding practice, communication, and practical development skills.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div><div class="eyebrow" style="color:#d9b99d">Get in touch</div><h2>Have an idea or opportunity?</h2><p>I’d be happy to connect, learn from others, and explore opportunities to grow as a developer.</p><a class="btn" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a></div>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/dhanumitha-s-cse/" target="_blank" rel="noopener noreferrer">↗ LinkedIn profile</a>
+            <a href="https://github.com/dhanumithaselvakumaran" target="_blank" rel="noopener noreferrer">↗ GitHub profile</a>
+            <a href="https://leetcode.com/u/dhanumitha08/" target="_blank" rel="noopener noreferrer">↗ LeetCode profile</a>
+            <span style="font-size:.83rem;color:#c7b6a8">Replace the email placeholder with your preferred email before publishing.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>© <span id="year"></span> Dhanumitha S</span><span>Designed with care · Made to keep growing</span></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleMenu(){
+      const links=document.getElementById('navlinks');
+      const btn=document.querySelector('.menu');
+      links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', links.classList.contains('open'));
+    }
+    function closeMenu(){
+      document.getElementById('navlinks').classList.remove('open');
+      document.querySelector('.menu').setAttribute('aria-expanded','false');
+    }
+  </script>
+</body>
+</html>
